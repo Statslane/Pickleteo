@@ -8,12 +8,16 @@ export default function Footer() {
         <div className="md:col-span-2 flex items-start gap-4">
           <img src="/Pickleteologo.png" alt="PickleTeo" className="h-20 sm:h-28 md:h-32 w-auto flex-shrink-0" />
           <div>
-            <div className="font-bold text-xl text-black mb-2">PICKLETEO PADDLE CLUB</div>
+            <div className="font-bold text-xl text-[#0E3E57] mb-2">PICKLETEO PADDLE CLUB</div>
             <p className="text-[#0E3E57] max-w-sm">The Puget Sound area's premier dedicated indoor pickleball destination. Inspired by Side Out Pickleball Centers.</p>
+            <div className="space-x-4 mt-4 text-sm text-[#0E3E57]">
+              <a href="#" className="hover:text-black">Privacy Policy</a>
+              <a href="#" className="hover:text-black">Terms & Conditions</a>
+            </div>
           </div>
         </div>
         <div>
-          <h4 className="font-bold mb-4">Play</h4>
+          <h4 className="font-bold text-[#0E3E57] mb-4">Play</h4>
           <ul className="space-y-2 text-[#0E3E57] text-sm">
             <li><a href="https://app.courtreserve.com/Online/PublicBookings/17390/Landing" target="_blank" rel="noopener noreferrer" className="hover:text-black">Book a Court</a></li>
             <li><a href="https://widgets.courtreserve.com/Online/Public/EmbedCode/17390/102214" target="_blank" rel="noopener noreferrer" className="hover:text-black">Join an Open Play</a></li>
@@ -22,7 +26,7 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="font-bold mb-4">Mukilteo</h4>
+          <h4 className="font-bold text-[#0E3E57] mb-4">Mukilteo</h4>
           <ul className="space-y-2 text-[#0E3E57] text-sm mb-4">
             <li>2716 119th Street SW</li>
             <li>Everett, WA 98204</li>
@@ -46,10 +50,9 @@ export default function Footer() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-8 border-t border-[#0E3E57] text-sm text-[#0E3E57] flex flex-col md:flex-row justify-between">
-        <p>© 2026 PickleTeo LLC. All rights reserved.</p>
-        <div className="space-x-4 mt-4 md:mt-0">
-          <a href="#" className="hover:text-black">Privacy Policy</a>
-          <a href="#" className="hover:text-black">Terms & Conditions</a>
+        <p>© 2026 PICKLETEO LLC. All rights reserved.</p>
+        <div className="mt-4 md:mt-0 text-sm">
+          Designed by <a href="http://www.statslane.com" target="_blank" rel="noopener noreferrer" className="font-bold hover:underline">STATSLANE</a>
         </div>
       </div>
     </footer>

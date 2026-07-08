@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Header from './Header';
 import Footer from './Footer';
+
+const fadeUp = { hidden: { opacity: 0, y: 50 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } } };
+const fadeLeft = { hidden: { opacity: 0, x: -60 }, show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } } };
+const fadeRight = { hidden: { opacity: 0, x: 60 }, show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } } };
 
 function useWindowSize() {
   const [size, setSize] = useState({ w: window.innerWidth, h: window.innerHeight });
@@ -36,31 +41,35 @@ export default function TheClub() {
       >
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative w-full max-w-7xl mx-auto" style={{ paddingTop: pt, paddingBottom: '2.5rem', paddingLeft: px, paddingRight: px }}>
-          <div className="flex items-center gap-3 mb-3">
-            <span className="w-8 h-[2px] bg-[#DDB764] inline-block" />
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#DDB764]">The Club</span>
-          </div>
-          <h1 className="font-black tracking-tight leading-tight text-white mb-4" style={{ fontSize: headingSize }}>
-            BUILT FOR THE GAME.<br />
-            DESIGNED FOR <span className="text-[#DDB764]">YOU.</span>
-          </h1>
-          <p className="text-white max-w-md" style={{ fontSize: subSize }}>
-            Everything about PickleTeo Paddle Club is purpose-built for pickleball — the courts, the hours, the community, and the culture.
-          </p>
+          <motion.div initial="hidden" animate="show" variants={{ hidden: {}, show: { transition: { staggerChildren: 0.15 } } }}>
+            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-3">
+              <span className="w-8 h-[2px] bg-[#DDB764] inline-block" />
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#DDB764]">The Club</span>
+            </motion.div>
+            <motion.h1 variants={fadeUp} className="font-black tracking-tight leading-tight text-white mb-4" style={{ fontSize: headingSize }}>
+              BUILT FOR THE GAME.<br />
+              DESIGNED FOR <span className="text-[#DDB764]">YOU.</span>
+            </motion.h1>
+            <motion.p variants={fadeUp} className="text-white max-w-md" style={{ fontSize: subSize }}>
+              Everything about PickleTeo Paddle Club is purpose-built for pickleball — the courts, the hours, the community, and the culture.
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 
       {/* PROGRAMMING SECTION */}
       <section className="py-16 lg:py-24 bg-[#f5f5f0]">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="w-8 h-[2px] bg-[#DDB764] inline-block" />
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#DDB764]">Programming</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#0E3E57] mb-12">
-            SOMETHING FOR<br />
-            <span className="text-[#DDB764]">EVERY PLAYER.</span>
-          </h2>
+          <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>
+            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-4">
+              <span className="w-8 h-[2px] bg-[#DDB764] inline-block" />
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#DDB764]">Programming</span>
+            </motion.div>
+            <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#0E3E57] mb-12">
+              SOMETHING FOR<br />
+              <span className="text-[#DDB764]">EVERY PLAYER.</span>
+            </motion.h2>
+          </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border border-zinc-200 rounded-xl overflow-hidden">
             {[
               { tag: 'Open Play', title: 'DROP IN ANYTIME', desc: 'Structured open play sessions organized by skill level. Show up, get matched, and play. Morning, afternoon, and evening blocks available daily.' },
@@ -69,12 +78,14 @@ export default function TheClub() {
               { tag: 'Private Lessons', title: 'ONE-ON-ONE COACHING', desc: 'Book private or semi-private lessons with certified instructors. Tailored to your game, your goals, your pace.' },
               { tag: 'Tournaments', title: 'GAME DAY ENERGY', desc: 'In-house round robins and tournaments throughout the year. Compete against other club members in a fun, organized setting.' },
               { tag: 'Court Rentals', title: 'BOOK YOUR COURT', desc: 'Reserve a court online for private play with friends. Easy booking through our app — see availability in real time.' },
-            ].map(({ tag, title, desc }) => (
-              <div key={title} className="card-line relative p-6 sm:p-8 border-b sm:border-r border-zinc-200 last:border-b-0 bg-white">
+            ].map(({ tag, title, desc }, i) => (
+              <motion.div key={title} className="card-line relative p-6 sm:p-8 border-b sm:border-r border-zinc-200 last:border-b-0 bg-white"
+                initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}
+                variants={{ hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut', delay: i * 0.08 } } }}>
                 <div className="text-xs font-semibold uppercase tracking-widest text-[#DDB764] mb-3">{tag}</div>
                 <div className="text-base font-black text-[#0E3E57] mb-3">{title}</div>
                 <p className="text-zinc-500 text-sm leading-relaxed">{desc}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -83,7 +94,7 @@ export default function TheClub() {
       {/* BOOKING SECTION */}
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div>
+          <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={fadeLeft}>
             <div className="flex items-center gap-3 mb-4">
               <span className="w-8 h-[2px] bg-[#DDB764] inline-block" />
               <span className="text-xs font-semibold uppercase tracking-widest text-[#DDB764]">Booking</span>
@@ -103,33 +114,35 @@ export default function TheClub() {
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="bg-[#f5f5f0] rounded-2xl p-8 sm:p-12 flex flex-col items-center text-center">
+          </motion.div>
+          <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={fadeRight} className="bg-[#f5f5f0] rounded-2xl p-8 sm:p-12 flex flex-col items-center text-center">
             <h3 className="text-2xl sm:text-3xl font-black text-[#0E3E57] mb-2">Smart Booking</h3>
             <p className="text-zinc-400 text-sm mb-4">Our club management platform</p>
             <p className="text-zinc-600 text-sm leading-relaxed max-w-sm">
               Court bookings, membership management, open play, leagues, keyless door access, and payments — all in one app. Available on iOS and Android.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA SECTION */}
-      <section className="py-20 lg:py-32 bg-[#0E3E57] text-center relative overflow-hidden">
+      <section className="py-12 lg:py-20 bg-[#0E3E57] text-center relative overflow-hidden">
         <div className="absolute inset-0" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,0.04) 59px, rgba(255,255,255,0.04) 60px), repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.04) 59px, rgba(255,255,255,0.04) 60px)' }} />
-        <div className="relative max-w-2xl mx-auto px-6">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white mb-4">
+        <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.15 } } }}
+          className="relative max-w-2xl mx-auto px-6">
+          <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-4">
             READY TO <span className="text-[#DDB764]">PLAY?</span>
-          </h2>
-          <p className="text-zinc-300 text-sm sm:text-base mb-8">
+          </motion.h2>
+          <motion.p variants={fadeUp} className="text-zinc-300 text-sm sm:text-base mb-8">
             Membership is limited. Join the waitlist for early access, insider updates, and priority when we open.
-          </p>
-          <a href="https://app.courtreserve.com/Online/Memberships/Public/17390" target="_blank" rel="noopener noreferrer"
+          </motion.p>
+          <motion.a variants={fadeUp} href="https://app.courtreserve.com/Online/Memberships/Public/17390" target="_blank" rel="noopener noreferrer"
             className="inline-block border border-[#DDB764] text-white text-xs font-bold uppercase tracking-widest px-10 py-4 hover:bg-[#DDB764] hover:text-[#0E3E57] transition-colors duration-300">
             Get On The List
-          </a>
-          <p className="text-white text-xs mt-4">No credit card. No commitment. We'll be in touch.</p>
-        </div>
+          </motion.a>
+          <motion.p variants={fadeUp} className="text-white text-xs mt-4">No credit card. No commitment. We'll be in touch.</motion.p>
+        </motion.div>
       </section>
 
       <Footer />

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function MoreDropdown() {
   const [open, setOpen] = useState(false);
@@ -8,36 +9,48 @@ function MoreDropdown() {
         More <span className={`transition-transform duration-200 ${open ? 'rotate-180' : ''}`}>▾</span>
         <span className={`absolute -bottom-1 left-0 h-[2px] bg-[#DDB764] transition-all duration-300 ${open ? 'w-full' : 'w-0'}`} />
       </button>
-      {open && (
-        <div className="absolute top-full left-0 w-48">
-          <div className="pt-2">
-            <div className="bg-white text-zinc-900 rounded-md shadow-lg overflow-hidden animate-dropdown">
-              <a href="/sponsor" className="block px-4 py-3 text-sm transition-colors hover:bg-[#DDB764] hover:text-white">Sponsor</a>              <a href="/about" className="block px-4 py-3 text-sm transition-colors hover:bg-[#DDB764] hover:text-white">About Us</a>
-              <a href="https://pickleteo.com/register" target="_blank" rel="noopener noreferrer" className="block px-4 py-3 text-sm transition-colors hover:bg-[#DDB764] hover:text-white">Register</a>
-              <a href="https://pickleteo.com/contact" target="_blank" rel="noopener noreferrer" className="block px-4 py-3 text-sm transition-colors hover:bg-[#DDB764] hover:text-white">Contact Us</a>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            className="absolute top-full right-0 w-48 pt-2"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="bg-white text-zinc-900 rounded-md shadow-lg overflow-hidden">
+              <a href="/sponsor" className="block px-4 py-3 text-sm transition-colors hover:bg-[#DDB764] hover:text-white">Sponsor</a>
+              <a href="https://widgets.courtreserve.com/Online/Public/EmbedCode/17390/102215" target="_blank" rel="noopener noreferrer" className="block px-4 py-3 text-sm transition-colors hover:bg-[#DDB764] hover:text-white">Events</a>
+              <a href="/about" className="block px-4 py-3 text-sm transition-colors hover:bg-[#DDB764] hover:text-white">About Us</a>
+              <a href="#" rel="noopener noreferrer" className="block px-4 py-3 text-sm transition-colors hover:bg-[#DDB764] hover:text-white">Register</a>
+              <a href="/contact" className="block px-4 py-3 text-sm transition-colors hover:bg-[#DDB764] hover:text-white">Contact Us</a>
             </div>
-          </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
 
 export default function Header({ alwaysVisible = false }) {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(window.scrollY < window.innerHeight / 2);
   const [menuOpen, setMenuOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
 
   useEffect(() => {
-    if (alwaysVisible) return;
-    const onScroll = () => setVisible(window.scrollY < window.innerHeight);
+    const onScroll = () => setVisible(window.scrollY < window.innerHeight / 2);
+    onScroll();
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, [alwaysVisible]);
 
   return (
     <>
-      <header className={`fixed top-0 z-[60] w-full transition-transform duration-300 ${visible || alwaysVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+      <motion.header
+        className="fixed top-0 z-[60] w-full"
+        animate={{ y: visible ? 0 : '-100%' }}
+        transition={{ duration: 0.35, ease: 'easeInOut' }}
+      >
         <div className="w-full px-4 sm:px-6 h-14 sm:h-20 lg:h-28 flex items-center">
           <a href="/">
             <img src="/Pickleteologo.png" alt="PickleTeo" className="w-auto h-10 sm:h-16 lg:h-24" />
@@ -68,29 +81,46 @@ export default function Header({ alwaysVisible = false }) {
             <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
           </button>
         </div>
-      </header>
+      </motion.header>
 
-      {menuOpen && (
-        <div className="md:hidden fixed inset-0 bg-black/95 text-white px-6 pt-20 pb-6 flex flex-col gap-1 overflow-y-auto z-50">
-          <a href="https://app.courtreserve.com/Online/PublicBookings/17390/Landing" className="py-3 border-b border-white/10 hover:text-[#DDB764] transition-colors">Book a Court</a>
-          <a href="https://widgets.courtreserve.com/Online/Public/EmbedCode/17390/102214" className="py-3 border-b border-white/10 hover:text-[#DDB764] transition-colors">Join an Open Play</a>
-          <a href="/the-club" className="py-3 border-b border-white/10 hover:text-[#DDB764] transition-colors">The Club</a>
-          <a href="https://app.courtreserve.com/Online/Memberships/Public/17390" className="py-3 border-b border-white/10 hover:text-[#DDB764] transition-colors">Membership</a>
-          <div className="border-b border-white/10">
-            <button onClick={() => setMoreOpen(!moreOpen)} className="w-full flex justify-between items-center py-3 hover:text-[#DDB764] transition-colors">
-              More <span className={`transition-transform duration-200 ${moreOpen ? 'rotate-180' : ''}`}>▾</span>
-            </button>
-            {moreOpen && (
-              <div className="pl-4 pb-2 flex flex-col gap-1">
-                <a href="/sponsor" className="py-2 text-sm text-white/70 hover:text-[#DDB764] transition-colors">Sponsor</a>
-                <a href="/about" className="py-2 text-sm text-white/70 hover:text-[#DDB764] transition-colors">About Us</a>
-                <a href="https://pickleteo.com/register" className="py-2 text-sm text-white/70 hover:text-[#DDB764] transition-colors">Register</a>
-                <a href="https://pickleteo.com/contact" className="py-2 text-sm text-white/70 hover:text-[#DDB764] transition-colors">Contact Us</a>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            className="md:hidden fixed inset-0 bg-black/95 text-white px-6 pt-20 pb-6 flex flex-col gap-1 overflow-y-auto z-50"
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+          >
+            <a href="https://app.courtreserve.com/Online/PublicBookings/17390/Landing" className="py-3 border-b border-white/10 hover:text-[#DDB764] transition-colors">Book a Court</a>
+            <a href="https://widgets.courtreserve.com/Online/Public/EmbedCode/17390/102214" className="py-3 border-b border-white/10 hover:text-[#DDB764] transition-colors">Join an Open Play</a>
+            <a href="/the-club" className="py-3 border-b border-white/10 hover:text-[#DDB764] transition-colors">The Club</a>
+            <a href="https://app.courtreserve.com/Online/Memberships/Public/17390" className="py-3 border-b border-white/10 hover:text-[#DDB764] transition-colors">Membership</a>
+            <div className="border-b border-white/10">
+              <button onClick={() => setMoreOpen(!moreOpen)} className="w-full flex justify-between items-center py-3 hover:text-[#DDB764] transition-colors">
+                More <span className={`transition-transform duration-200 ${moreOpen ? 'rotate-180' : ''}`}>▾</span>
+              </button>
+              <AnimatePresence>
+                {moreOpen && (
+                  <motion.div
+                    className="pl-4 pb-2 flex flex-col gap-1"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <a href="/sponsor" className="py-2 text-sm text-white/70 hover:text-[#DDB764] transition-colors">Sponsor</a>
+                    <a href="https://widgets.courtreserve.com/Online/Public/EmbedCode/17390/102215" target="_blank" rel="noopener noreferrer" className="py-2 text-sm text-white/70 hover:text-[#DDB764] transition-colors">Events</a>
+                    <a href="/about" className="py-2 text-sm text-white/70 hover:text-[#DDB764] transition-colors">About Us</a>
+                    <a href="https://pickleteo.com/register" className="py-2 text-sm text-white/70 hover:text-[#DDB764] transition-colors">Register</a>
+                    <a href="/contact" className="py-2 text-sm text-white/70 hover:text-[#DDB764] transition-colors">Contact Us</a>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
