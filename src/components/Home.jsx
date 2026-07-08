@@ -16,12 +16,12 @@ function Home() {
 
       {/* HERO SECTION */}
       <section ref={heroRef} className="relative w-full flex flex-col items-start justify-center overflow-hidden" style={{ minHeight: '100vh' }}>
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0">
           <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
             <source src="/vid1.mp4" type="video/mp4" />
           </video>
         </div>
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/15" />
         <div className="relative max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-16 pt-20 sm:pt-24 pb-12">
           <div className="max-w-xl">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tighter leading-[1.1] text-white">

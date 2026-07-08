@@ -42,7 +42,7 @@ export default function Header({ alwaysVisible = false }) {
           <a href="/">
             <img src="/Pickleteologo.png" alt="PickleTeo" className="w-auto h-10 sm:h-16 lg:h-24" />
           </a>
-          <nav className="hidden md:flex gap-4 lg:gap-8 text-sm lg:text-base font-medium text-white/80 ml-auto mr-2 lg:mr-8">
+          <nav className="hidden md:flex gap-4 lg:gap-8 text-xs lg:text-sm font-medium text-white/80 ml-auto mr-2 lg:mr-8 -mt-4">
             <a href="https://app.courtreserve.com/Online/PublicBookings/17390/Landing" target="_blank" rel="noopener noreferrer" className="transition-colors capitalize relative group hover:text-[#DDB764] whitespace-nowrap">
               Book a Court
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#DDB764] transition-all duration-300 group-hover:w-full" />
