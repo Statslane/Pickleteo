@@ -61,7 +61,7 @@ export default function ContactUs() {
             <h2 className="text-3xl sm:text-4xl font-black mb-6">PICKLETEO CONTACT</h2>
             <div className="space-y-3">
               <p className="text-[#DDB764] font-bold text-lg underline">Mukilteo</p>
-              <p className="text-sm"><span className="font-bold">Email: </span><a href="mailto:Info@sopbcenters.com" className="text-[#DDB764] hover:underline">Info@sopbcenters.com</a></p>
+              <p className="text-sm"><span className="font-bold">Email: </span><a href="mailto:Info@pickleteo.com" className="text-[#DDB764] hover:underline">Info@pickleteo.com</a></p>
               <p className="text-sm"><span className="font-bold">Phone: </span><a href="tel:4255138946" className="text-[#DDB764] hover:underline">(425) 513-8946</a></p>
               <div className="text-sm">
                 <p className="font-bold">Address:</p>

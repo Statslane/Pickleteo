@@ -51,9 +51,9 @@ export default function Header({ alwaysVisible = false }) {
         animate={{ y: visible ? 0 : '-100%' }}
         transition={{ duration: 0.35, ease: 'easeInOut' }}
       >
-        <div className="w-full px-4 sm:px-6 h-14 sm:h-20 lg:h-28 flex items-center">
+        <div className="w-full px-4 sm:px-6 h-20 sm:h-20 lg:h-28 flex items-center">
           <a href="/">
-            <img src="/Pickleteologo.png" alt="PickleTeo" className="w-auto h-10 sm:h-16 lg:h-24" />
+            <img src="/Pickleteologo.png" alt="PickleTeo" className="w-auto h-16 sm:h-16 lg:h-24" />
           </a>
           <nav className="hidden md:flex gap-4 lg:gap-8 text-xs lg:text-sm font-medium text-white/80 ml-auto mr-2 lg:mr-8 -mt-4">
             <a href="https://app.courtreserve.com/Online/PublicBookings/17390/Landing" target="_blank" rel="noopener noreferrer" className="transition-colors capitalize relative group hover:text-[#DDB764] whitespace-nowrap">
