@@ -72,7 +72,7 @@ export default function TheClub() {
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border border-zinc-200 rounded-xl overflow-hidden">
             {[
-              { tag: 'Open Play', title: 'DROP IN ANYTIME', desc: 'Structured open play sessions organized by skill level. Show up, get matched, and play. Morning, afternoon, and evening blocks available daily.' },
+              { tag: 'Open Play', title: 'SIGN UP ANYTIME', desc: 'Structured open play sessions organized by skill level. Show up, get matched, and play. Morning, afternoon, and evening blocks available daily.' },
               { tag: 'Leagues', title: 'COMPETITIVE PLAY', desc: 'Seasonal leagues with standings, playoffs, and skill-based divisions. From recreational to competitive — find your bracket.' },
               { tag: 'Clinics', title: 'LEVEL UP YOUR GAME', desc: 'Group clinics for beginners, intermediate, and advanced players. Focus on strategy, shot selection, and court positioning.' },
               { tag: 'Private Lessons', title: 'ONE-ON-ONE COACHING', desc: 'Book private or semi-private lessons with certified instructors. Tailored to your game, your goals, your pace.' },

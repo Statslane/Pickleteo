@@ -9,7 +9,7 @@ export default function Footer() {
           <img src="/Pickleteologo.png" alt="PickleTeo" className="h-28 sm:h-28 md:h-32 w-auto flex-shrink-0" />
           <div className="mt-2 sm:mt-4">
             <div className="font-bold text-base sm:text-xl text-[#0E3E57] mb-2">PICKLETEO PADDLE CLUB</div>
-            <p className="text-[#0E3E57] text-sm sm:text-base max-w-sm">Washington's locally owned indoor pickleball club. 8 courts, year-round play, and a community built from the ground up.</p>
+            <p className="text-[#0E3E57] text-sm sm:text-base max-w-sm">Washington's locally owned indoor <br/> pickleball club. 8 courts, year-round <br/> play, and a community built from the <br/> ground up.</p>
           </div>
         </div>
         <div>

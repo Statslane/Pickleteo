@@ -22,7 +22,7 @@ export default function AboutUs() {
           </motion.div>
           <motion.h1 variants={fadeUp} className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-4 uppercase">
             Western Washington’s premier<br />
-            pickleball facilities
+            pickleball Facility
           </motion.h1>
           <motion.p variants={fadeUp} className="text-white text-base sm:text-lg max-w-md leading-relaxed">
             PICKLETEO isn't a franchise. It's a community project, built by a neighbor who wanted a better place to play.
@@ -40,7 +40,7 @@ export default function AboutUs() {
               <div className="flex items-center gap-4 mb-4">
                 <div>
                   <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 uppercase leading-tight">Frank Espinoza</h2>
-                  <p className="text-[#0E3E57] text-sm font-semibold tracking-widest uppercase">The Founder</p>
+                  <p className="text-[#0E3E57] text-sm font-semibold tracking-widest uppercase">Founder</p>
                 </div>
                 <img src="/frank.jpg" alt="Frank Espinoza" className="w-40 h-40 rounded-full object-cover" />
               </div>
@@ -50,9 +50,6 @@ export default function AboutUs() {
               <p className="text-zinc-700 text-sm leading-relaxed mb-4">
                 Frank is the owner of two successful restaurants in the Seattle Metro area, and the founder of Climaco Consulting LLC, where his clients have included Brightstar, Sam's Club, Target, Smart Circle, Sprint, Encore Repair and Costco. He previously served as Head of Stores for Wireless Advocates - the 3rd party wireless retailer in Costco stores nationally. Prior to that he led central operations at Radio Shack.
               </p>
-              <p className="text-zinc-700 text-sm leading-relaxed">
-                The crafty lefty plays the ProXR Connor Garnett signature paddle and loves to shake and bake. The rest of the team hopes one day he'll agree to stacking.
-              </p>
             </motion.div>
 
             {/* RIGHT — Colby */}
@@ -60,7 +57,7 @@ export default function AboutUs() {
               <div className="flex items-center gap-4 mb-4">
                 <div>
                   <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 uppercase leading-tight">Colby Espinoza</h2>
-                  <p className="text-[#0E3E57] text-sm font-semibold tracking-widest uppercase">General Manager</p>
+                  <p className="text-[#0E3E57] text-sm font-semibold tracking-widest uppercase">Founder</p>
                 </div>
                 <img src="/colby.jpg" alt="Colby Espinoza" className="w-40 h-40 rounded-full object-cover" />
               </div>
@@ -72,9 +69,6 @@ export default function AboutUs() {
               </p>
               <p className="text-zinc-700 text-sm leading-relaxed mb-4">
                 He is passionate about creating an unparalleled experience for players of all skill levels to play, create community and have a great time in his devotion to making PICKLETEO THE place for pickleball in Western Washington. He looks forward to getting to know as many players as possible.
-              </p>
-              <p className="text-zinc-700 text-sm leading-relaxed">
-                Colby is quickly becoming a formidable pickleball player with a nasty serve, and has become an ardent practitioner of the patented Connor Garnett "twoey" with his ProXR.
               </p>
             </motion.div>
 

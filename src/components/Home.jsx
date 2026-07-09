@@ -59,17 +59,16 @@ function Home() {
               <span className="text-[#0E3E57]">EIGHT COURTS.</span><br />
               <span className="text-[#DDB764] whitespace-nowrap">ZERO COMPROMISES.</span>
             </h2>
-            <p className="text-zinc-600 mb-4">We're building a purpose-built facility with eight indoor pickleball courts. Professional-grade surfaces, LED sport lighting, high ceilings, and climate control for year-round comfort.</p>
+            <p className="text-zinc-600 mb-4">We're building a purpose-built facility with eight indoor pickleball courts. Professional-grade cushion surface, Pickleball tuned LED lighting, high ceilings, and climate control for year-round comfort.</p>
             <p className="text-zinc-600">No shared gym floors. No outdoor courts with rain delays. This is a dedicated pickleball facility — every square foot is designed for the sport.</p>
           </motion.div>
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={fadeRight} className="divide-y divide-zinc-200 w-full lg:ml-auto lg:w-3/4">
             {[
               { label: 'COURTS', value: '8 indoor courts' },
-              { label: 'SURFACE', value: 'Professional-grade sport court' },
-              { label: 'LIGHTING', value: 'LED sport lighting system' },
-              { label: 'CLIMATE', value: 'Fully insulated & climate-controlled' },
+              { label: 'SURFACE', value: 'Cushion surfaced professional-grade court' },
+              { label: 'LIGHTING', value: 'Pickleball tuned LED lighting system' },
+              { label: 'CLIMATE', value: 'Fully insulated & noise-controlled' },
               { label: 'TECHNOLOGY', value: 'Smart courts equipped with cameras' },
-              { label: 'MEMBERSHIP', value: 'Capped — courts always available' },
               { label: 'LOCATION', value: 'Everett, WA' },
             ].map(({ label, value }) => (
               <div key={label} className="flex justify-between items-center py-3 gap-4">
@@ -188,7 +187,7 @@ function Home() {
         <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.15 } } }}>
           <motion.div variants={fadeUp} className="inline-block bg-[#0E3E57] text-white px-3 py-1 rounded-full text-sm font-semibold tracking-wide mb-6">Courts Are Open</motion.div>
           <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl lg:text-5xl font-bold tracking-tight mb-6 text-[#0E3E57]">Ready to hit the courts?</motion.h2>
-          <motion.p variants={fadeUp} className="text-base sm:text-lg text-[#0E3E57] mb-8">Join the fastest-growing community in the Pacific Northwest. Experience the PickleTeo difference today.</motion.p>
+          <motion.p variants={fadeUp} className="text-base sm:text-lg text-[#0E3E57] mb-8">Join the fastest-growing community in the Pacific Northwest. Experience the PICKLETEO difference today.</motion.p>
           <motion.button variants={fadeUp} className="bg-[#DDB764] text-[#0E3E57] px-8 py-4 rounded-md font-medium text-lg hover:bg-[#C6A55A] w-full sm:w-auto transition">
             View Schedule & Book
           </motion.button>
