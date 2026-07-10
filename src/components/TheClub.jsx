@@ -43,14 +43,14 @@ export default function TheClub() {
         <div className="relative w-full max-w-7xl mx-auto" style={{ paddingTop: pt, paddingBottom: '2.5rem', paddingLeft: px, paddingRight: px }}>
           <motion.div initial="hidden" animate="show" variants={{ hidden: {}, show: { transition: { staggerChildren: 0.15 } } }}>
             <motion.div variants={fadeUp} className="flex items-center gap-3 mb-3">
-              <span className="w-8 h-[2px] bg-[#DDB764] inline-block" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#DDB764]">The Club</span>
+              <span className="w-8 h-[2px] bg-[#D0B060] inline-block" />
+              <span className="text-xs font-medium uppercase tracking-widest text-[#D0B060]">The Club</span>
             </motion.div>
             <motion.h1 variants={fadeUp} className="font-black tracking-tight leading-tight text-white mb-4" style={{ fontSize: headingSize }}>
               BUILT FOR THE GAME.<br />
-              DESIGNED FOR <span className="text-[#DDB764]">YOU.</span>
+              DESIGNED FOR <span className="text-[#D0B060]">YOU.</span>
             </motion.h1>
-            <motion.p variants={fadeUp} className="text-white max-w-md" style={{ fontSize: subSize }}>
+            <motion.p variants={fadeUp} className="text-white max-w-md font-normal leading-relaxed" style={{ fontSize: subSize }}>
               Everything about PickleTeo Paddle Club is purpose-built for pickleball — the courts, the hours, the community, and the culture.
             </motion.p>
           </motion.div>
@@ -58,16 +58,16 @@ export default function TheClub() {
       </section>
 
       {/* PROGRAMMING SECTION */}
-      <section className="py-16 lg:py-24 bg-[#f5f5f0]">
+      <section className="py-16 lg:py-24 bg-[#F0F0E8]">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>
             <motion.div variants={fadeUp} className="flex items-center gap-3 mb-4">
-              <span className="w-8 h-[2px] bg-[#DDB764] inline-block" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#DDB764]">Programming</span>
+              <span className="w-8 h-[2px] bg-[#D0B060] inline-block" />
+              <span className="text-xs font-medium uppercase tracking-widest text-[#D0B060]">Programming</span>
             </motion.div>
-            <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#0E3E57] mb-12">
+            <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#0F5050] mb-12">
               SOMETHING FOR<br />
-              <span className="text-[#DDB764]">EVERY PLAYER.</span>
+              <span className="text-[#D0B060]">EVERY PLAYER.</span>
             </motion.h2>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border border-zinc-200 rounded-xl overflow-hidden">
@@ -82,9 +82,9 @@ export default function TheClub() {
               <motion.div key={title} className="card-line relative p-6 sm:p-8 border-b sm:border-r border-zinc-200 last:border-b-0 bg-white"
                 initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}
                 variants={{ hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut', delay: i * 0.08 } } }}>
-                <div className="text-xs font-semibold uppercase tracking-widest text-[#DDB764] mb-3">{tag}</div>
-                <div className="text-base font-black text-[#0E3E57] mb-3">{title}</div>
-                <p className="text-zinc-500 text-sm leading-relaxed">{desc}</p>
+                <div className="text-xs font-medium uppercase tracking-widest text-[#D0B060] mb-3">{tag}</div>
+                <div className="text-base font-semibold text-[#0F5050] mb-3">{title}</div>
+                <p className="text-zinc-500 text-sm leading-relaxed font-normal">{desc}</p>
               </motion.div>
             ))}
           </div>
@@ -96,29 +96,29 @@ export default function TheClub() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={fadeLeft}>
             <div className="flex items-center gap-3 mb-4">
-              <span className="w-8 h-[2px] bg-[#DDB764] inline-block" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#DDB764]">Booking</span>
+              <span className="w-8 h-[2px] bg-[#D0B060] inline-block" />
+              <span className="text-xs font-medium uppercase tracking-widest text-[#D0B060]">Booking</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-6 text-[#0E3E57]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-6 text-[#0F5050]">
               BOOK IN SECONDS.<br />
-              <span className="text-[#DDB764]">PLAY IN MINUTES.</span>
+              <span className="text-[#D0B060]">PLAY IN MINUTES.</span>
             </h2>
-            <p className="text-zinc-600 text-sm sm:text-base mb-6 max-w-md">
+            <p className="text-zinc-600 text-sm sm:text-base mb-6 max-w-md font-normal leading-relaxed">
               All court reservations, open play sign-ups, and program registrations are handled through our club app. See real-time availability, book your spot, and check in — all from your phone.
             </p>
             <ul className="space-y-3">
               {['Real-time court availability', 'Mobile app for iOS and Android', 'Open play sign-ups by skill level', 'Lesson and clinic registration'].map(item => (
-                <li key={item} className="flex items-center gap-3 text-sm text-zinc-700">
-                  <span className="w-5 h-5 rounded-full bg-[#DDB764] flex items-center justify-center text-white text-xs flex-shrink-0">✓</span>
+                <li key={item} className="flex items-center gap-3 text-sm text-zinc-600 font-normal">
+                  <span className="w-5 h-5 rounded-full bg-[#D0B060] flex items-center justify-center text-white text-xs flex-shrink-0">✓</span>
                   {item}
                 </li>
               ))}
             </ul>
           </motion.div>
-          <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={fadeRight} className="bg-[#f5f5f0] rounded-2xl p-8 sm:p-12 flex flex-col items-center text-center">
-            <h3 className="text-2xl sm:text-3xl font-black text-[#0E3E57] mb-2">Smart Booking</h3>
-            <p className="text-zinc-400 text-sm mb-4">Our club management platform</p>
-            <p className="text-zinc-600 text-sm leading-relaxed max-w-sm">
+          <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={fadeRight} className="bg-[#F0F0E8] rounded-2xl p-8 sm:p-12 flex flex-col items-center text-center">
+            <h3 className="text-2xl sm:text-3xl font-black text-[#0F5050] mb-2">Smart Booking</h3>
+            <p className="text-zinc-400 text-sm mb-4 font-normal">Our club management platform</p>
+            <p className="text-zinc-600 text-sm leading-relaxed max-w-sm font-normal">
               Court bookings, membership management, open play, leagues, keyless door access, and payments — all in one app. Available on iOS and Android.
             </p>
           </motion.div>
@@ -126,22 +126,22 @@ export default function TheClub() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="py-12 lg:py-20 bg-[#0E3E57] text-center relative overflow-hidden">
+      <section className="py-12 lg:py-20 bg-[#0F5050] text-center relative overflow-hidden">
         <div className="absolute inset-0" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,0.04) 59px, rgba(255,255,255,0.04) 60px), repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.04) 59px, rgba(255,255,255,0.04) 60px)' }} />
         <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}
           variants={{ hidden: {}, show: { transition: { staggerChildren: 0.15 } } }}
           className="relative max-w-2xl mx-auto px-6">
           <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-4">
-            READY TO <span className="text-[#DDB764]">PLAY?</span>
+            READY TO <span className="text-[#D0B060]">PLAY?</span>
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-zinc-300 text-sm sm:text-base mb-8">
+          <motion.p variants={fadeUp} className="text-zinc-300 text-sm sm:text-base mb-8 font-normal leading-relaxed">
             Membership is limited. Join the waitlist for early access, insider updates, and priority when we open.
           </motion.p>
           <motion.a variants={fadeUp} href="https://app.courtreserve.com/Online/Memberships/Public/17390" target="_blank" rel="noopener noreferrer"
-            className="inline-block border border-[#DDB764] text-white text-xs font-bold uppercase tracking-widest px-10 py-4 hover:bg-[#DDB764] hover:text-[#0E3E57] transition-colors duration-300">
+            className="inline-block border border-[#D0B060] text-white text-xs font-medium uppercase tracking-widest px-10 py-4 hover:bg-[#D0B060] hover:text-[#0F5050] transition-colors duration-300">
             Get On The List
           </motion.a>
-          <motion.p variants={fadeUp} className="text-white text-xs mt-4">No credit card. No commitment. We'll be in touch.</motion.p>
+          <motion.p variants={fadeUp} className="text-white/60 text-xs mt-4 font-normal">No credit card. No commitment. We'll be in touch.</motion.p>
         </motion.div>
       </section>
 

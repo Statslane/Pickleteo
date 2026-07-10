@@ -5,9 +5,9 @@ function MoreDropdown() {
   const [open, setOpen] = useState(false);
   return (
     <div className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-      <button className="transition-colors capitalize flex items-center gap-1 relative" style={{ color: open ? '#DDB764' : '' }}>
+      <button className="transition-colors capitalize flex items-center gap-1 relative" style={{ color: open ? '#D0B060' : '' }}>
         More <span className={`transition-transform duration-200 ${open ? 'rotate-180' : ''}`}>▾</span>
-        <span className={`absolute -bottom-1 left-0 h-[2px] bg-[#DDB764] transition-all duration-300 ${open ? 'w-full' : 'w-0'}`} />
+        <span className={`absolute -bottom-1 left-0 h-[2px] bg-[#D0B060] transition-all duration-300 ${open ? 'w-full' : 'w-0'}`} />
       </button>
       <AnimatePresence>
         {open && (
@@ -19,11 +19,11 @@ function MoreDropdown() {
             transition={{ duration: 0.2 }}
           >
             <div className="bg-white text-zinc-900 rounded-md shadow-lg overflow-hidden">
-              <a href="/sponsor" className="block px-4 py-3 text-sm transition-colors hover:bg-[#DDB764] hover:text-white">Sponsor</a>
-              <a href="https://widgets.courtreserve.com/Online/Public/EmbedCode/17390/102215" target="_blank" rel="noopener noreferrer" className="block px-4 py-3 text-sm transition-colors hover:bg-[#DDB764] hover:text-white">Events</a>
-              <a href="/about" className="block px-4 py-3 text-sm transition-colors hover:bg-[#DDB764] hover:text-white">About Us</a>
-              <a href="#" rel="noopener noreferrer" className="block px-4 py-3 text-sm transition-colors hover:bg-[#DDB764] hover:text-white">Register</a>
-              <a href="/contact" className="block px-4 py-3 text-sm transition-colors hover:bg-[#DDB764] hover:text-white">Contact Us</a>
+              <a href="/sponsor" className="block px-4 py-3 text-sm transition-colors hover:bg-[#D0B060] hover:text-white">Sponsor</a>
+              <a href="https://widgets.courtreserve.com/Online/Public/EmbedCode/17390/102215" target="_blank" rel="noopener noreferrer" className="block px-4 py-3 text-sm transition-colors hover:bg-[#D0B060] hover:text-white">Events</a>
+              <a href="/about" className="block px-4 py-3 text-sm transition-colors hover:bg-[#D0B060] hover:text-white">About Us</a>
+              <a href="#" rel="noopener noreferrer" className="block px-4 py-3 text-sm transition-colors hover:bg-[#D0B060] hover:text-white">Register</a>
+              <a href="/contact" className="block px-4 py-3 text-sm transition-colors hover:bg-[#D0B060] hover:text-white">Contact Us</a>
             </div>
           </motion.div>
         )}
@@ -48,38 +48,40 @@ export default function Header({ alwaysVisible = false }) {
     <>
       <motion.header
         className="fixed top-0 z-[60] w-full"
-        animate={{ y: visible ? 0 : '-100%' }}
-        transition={{ duration: 0.35, ease: 'easeInOut' }}
       >
-        <div className="w-full px-4 sm:px-6 h-20 sm:h-20 lg:h-28 flex items-center">
-          <a href="/">
-            <img src="/Pickleteologo.png" alt="PickleTeo" className="w-auto h-16 sm:h-16 lg:h-24" />
+        <div className="w-full px-4 sm:px-6 h-20 sm:h-20 lg:h-28 flex items-center" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, transparent 100%)' }}>
+          <a href="/" className="p-2 sm:p-3">
+            <img src="/Pickleteologo.png" alt="PickleTeo" className="w-auto h-[85px] sm:h-[85px] lg:h-[126px]" />
           </a>
-          <nav className="hidden md:flex gap-4 lg:gap-8 text-xs lg:text-sm font-medium text-white/80 ml-auto mr-2 lg:mr-8 -mt-4">
-            <a href="https://app.courtreserve.com/Online/PublicBookings/17390/Landing" target="_blank" rel="noopener noreferrer" className="transition-colors capitalize relative group hover:text-[#DDB764] whitespace-nowrap">
+          <motion.nav
+            className="hidden md:flex gap-4 lg:gap-8 text-xs lg:text-sm font-medium text-white/80 ml-auto mr-2 lg:mr-8 -mt-4"
+            animate={{ opacity: visible ? 1 : 0, y: visible ? 0 : -10, pointerEvents: visible ? 'auto' : 'none' }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+          >
+            <a href="https://app.courtreserve.com/Online/PublicBookings/17390/Landing" target="_blank" rel="noopener noreferrer" className="transition-colors capitalize relative group hover:text-[#D0B060] whitespace-nowrap">
               Book a Court
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#DDB764] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#D0B060] transition-all duration-300 group-hover:w-full" />
             </a>
-            <a href="https://widgets.courtreserve.com/Online/Public/EmbedCode/17390/102214" target="_blank" rel="noopener noreferrer" className="transition-colors capitalize relative group hover:text-[#DDB764] whitespace-nowrap">
+            <a href="https://widgets.courtreserve.com/Online/Public/EmbedCode/17390/102214" target="_blank" rel="noopener noreferrer" className="transition-colors capitalize relative group hover:text-[#D0B060] whitespace-nowrap">
               Join an Open Play
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#DDB764] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#D0B060] transition-all duration-300 group-hover:w-full" />
             </a>
-            <a href="/the-club" className="transition-colors capitalize relative group hover:text-[#DDB764] whitespace-nowrap">
+            <a href="/the-club" className="transition-colors capitalize relative group hover:text-[#D0B060] whitespace-nowrap">
               The Club
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#DDB764] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#D0B060] transition-all duration-300 group-hover:w-full" />
             </a>
-            <a href="https://app.courtreserve.com/Online/Memberships/Public/17390" target="_blank" rel="noopener noreferrer" className="transition-colors capitalize relative group hover:text-[#DDB764] whitespace-nowrap">
+            <a href="https://app.courtreserve.com/Online/Memberships/Public/17390" target="_blank" rel="noopener noreferrer" className="transition-colors capitalize relative group hover:text-[#D0B060] whitespace-nowrap">
               Membership
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#DDB764] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#D0B060] transition-all duration-300 group-hover:w-full" />
             </a>
             <MoreDropdown />
-          </nav>
+          </motion.nav>
 
-          <button className="md:hidden ml-auto text-white relative z-[60]" onClick={() => setMenuOpen(!menuOpen)}>
+          <motion.button className="md:hidden ml-auto text-white relative z-[60]" onClick={() => setMenuOpen(!menuOpen)}>
             <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
             <div className={`w-6 h-0.5 bg-white my-1 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
             <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
-          </button>
+          </motion.button>
         </div>
       </motion.header>
 

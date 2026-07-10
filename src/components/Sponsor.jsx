@@ -33,23 +33,22 @@ export default function Sponsor() {
         className="relative w-full flex items-center overflow-hidden"
         style={{ height: sectionHeight, backgroundImage: 'url(/HERO-SPONSORSHIP.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
       >
-
         <div className="relative w-full max-w-7xl mx-auto" style={{ paddingTop: pt, paddingBottom: '2.5rem', paddingLeft: w < 480 ? '1.5rem' : w < 1024 ? '2.5rem' : '4rem', paddingRight: w < 480 ? '1.5rem' : w < 1024 ? '2.5rem' : '4rem' }}>
           <motion.div initial="hidden" animate="show" variants={{ hidden: {}, show: { transition: { staggerChildren: 0.15 } } }}>
             <motion.div variants={fadeUp} className="flex items-center gap-3 mb-3">
-              <span className="w-8 h-[2px] bg-[#DDB764] inline-block" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#DDB764]">Sponsorship</span>
+              <span className="w-8 h-[2px] bg-[#D0B060] inline-block" />
+              <span className="text-xs font-medium uppercase tracking-widest text-[#D0B060]">Sponsorship</span>
             </motion.div>
             <motion.h1 variants={fadeUp} className="font-black tracking-tight leading-tight text-white mb-4" style={{ fontSize: headingSize }}>
               PARTNER WITH PICKLETEO<br />
-              <span className="text-[#DDB764]">PADDLE CLUB!</span>
+              <span className="text-[#D0B060]">PADDLE CLUB!</span>
             </motion.h1>
-            <motion.p variants={fadeUp} className="text-white max-w-md mb-8" style={{ fontSize: w < 480 ? '0.875rem' : '1.125rem' }}>
+            <motion.p variants={fadeUp} className="text-white max-w-md mb-8 font-normal leading-relaxed" style={{ fontSize: w < 480 ? '0.875rem' : '1.125rem' }}>
               The Premier Pickleball Destination in Everett / Mukilteo WA
             </motion.p>
             <motion.div variants={fadeUp}>
               <a href="mailto:Info@sopbcenters.com"
-                className="inline-block border border-[#DDB764] text-white text-xs font-bold uppercase tracking-widest px-10 py-4 hover:bg-[#DDB764] hover:text-[#0E3E57] transition-colors duration-300">
+                className="inline-block border border-[#D0B060] text-white text-xs font-medium uppercase tracking-widest px-10 py-4 hover:bg-[#D0B060] hover:text-[#0F5050] transition-colors duration-300">
                 Get in Touch
               </a>
             </motion.div>
@@ -58,7 +57,7 @@ export default function Sponsor() {
       </section>
 
       {/* INTRO SECTION */}
-      <section className="py-16 lg:py-24 bg-[#0E3E57]">
+      <section className="py-16 lg:py-24 bg-[#0F5050]">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col lg:flex-row gap-12 items-center">
           <motion.div className="w-full lg:w-[55%] flex-shrink-0"
             initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={fadeLeft}>
@@ -66,14 +65,14 @@ export default function Sponsor() {
           </motion.div>
           <motion.div className="w-full lg:w-[45%]"
             initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={fadeRight}>
-            <p className="text-white text-2xl sm:text-3xl font-bold leading-snug mb-6">
+            <p className="text-white text-2xl sm:text-3xl font-semibold leading-snug mb-6">
               PickleTeo Paddle Club isn't just a facility — it's the beating heart of the{' '}
-              <span className="text-[#DDB764]">fastest-growing sport in America.</span>
+              <span className="text-[#D0B060]">fastest-growing sport in America.</span>
             </p>
-            <p className="text-zinc-300 text-sm sm:text-base leading-relaxed mb-4">
+            <p className="text-zinc-300 text-sm sm:text-base leading-relaxed mb-4 font-normal">
               With over 5,000 unique players having stepped onto our courts (and growing by the week), we deliver an engaged, passionate, and affluent audience that few local venues can match.
             </p>
-            <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-normal">
               Pickleball players are loyal, social, and spend money. They're doctors, lawyers, CEOs, entrepreneurs, retirees with disposable income, and families looking for fun — all gathering multiple times per week at PickleTeo.
             </p>
           </motion.div>
@@ -81,16 +80,17 @@ export default function Sponsor() {
       </section>
 
       {/* WHY SPONSOR */}
-      <section className="py-8 lg:py-12 bg-[#f0f0eb]">
+      <section className="py-8 lg:py-12 bg-[#F0F0E8]">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>
             <motion.div variants={fadeUp} className="flex items-center gap-3 mb-4">
-              <span className="w-8 h-[2px] bg-[#0E3E57] inline-block" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#0E3E57]">Why Sponsor</span><span className="text-sm font-bold uppercase tracking-widest text-[#DDB764]">Pickleteo</span>
+              <span className="w-8 h-[2px] bg-[#0F5050] inline-block" />
+              <span className="text-xs font-medium uppercase tracking-widest text-[#0F5050]">Why Sponsor</span>
+              <span className="text-xs font-medium uppercase tracking-widest text-[#D0B060]">Pickleteo</span>
             </motion.div>
-            <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#0E3E57] mb-12">
+            <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#0F5050] mb-12">
               THE NUMBERS SPEAK<br />
-              <span className="text-[#DDB764]">FOR THEMSELVES.</span>
+              <span className="text-[#D0B060]">FOR THEMSELVES.</span>
             </motion.h2>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 gap-y-6">
@@ -109,8 +109,8 @@ export default function Sponsor() {
                   <img src={icon} alt="" className="w-24 h-24 object-contain" />
                 </div>
                 <div>
-                  <p className="font-black text-[#0E3E57] text-base sm:text-lg leading-tight">{title}</p>
-                  {sub && <p className="text-zinc-400 text-sm mt-1">{sub}</p>}
+                  <p className="font-semibold text-[#0F5050] text-base sm:text-lg leading-tight">{title}</p>
+                  {sub && <p className="text-zinc-500 text-sm mt-1 font-normal">{sub}</p>}
                 </div>
               </motion.div>
             ))}
@@ -118,18 +118,19 @@ export default function Sponsor() {
         </div>
       </section>
 
-      <section className="py-16 lg:py-24 bg-[#0E3E57]">
+      {/* OPPORTUNITIES */}
+      <section className="py-16 lg:py-24 bg-[#0F5050]">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
           <motion.div className="mb-12"
             initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}
             variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>
             <motion.div variants={fadeUp} className="flex items-center gap-3 mb-4">
-              <span className="w-8 h-[2px] bg-[#DDB764] inline-block" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#DDB764]">Customizable to Your Budget</span>
+              <span className="w-8 h-[2px] bg-[#D0B060] inline-block" />
+              <span className="text-xs font-medium uppercase tracking-widest text-[#D0B060]">Customizable to Your Budget</span>
             </motion.div>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
               EXCLUSIVE SPONSORSHIP<br />
-              <span className="text-[#DDB764]">OPPORTUNITIES.</span>
+              <span className="text-[#D0B060]">OPPORTUNITIES.</span>
             </motion.h2>
           </motion.div>
 
@@ -185,11 +186,11 @@ export default function Sponsor() {
                 </motion.div>
                 <motion.div className="w-full lg:w-[45%]"
                   variants={i % 2 === 0 ? fadeRight : fadeLeft}>
-                  <p className="text-[#DDB764] font-black text-2xl mb-3">{num}</p>
+                  <p className="text-[#D0B060] font-semibold text-2xl mb-3">{num}</p>
                   <h3 className="text-white font-black text-xl sm:text-2xl mb-4 leading-snug">{title}</h3>
-                  {desc && <p className="text-zinc-300 text-base leading-relaxed">{desc}</p>}
+                  {desc && <p className="text-zinc-300 text-base leading-relaxed font-normal">{desc}</p>}
                   {bullets.length > 0 && (
-                    <ul className="text-zinc-300 text-base leading-relaxed list-disc list-inside space-y-2">
+                    <ul className="text-zinc-300 text-base leading-relaxed list-disc list-inside space-y-2 font-normal mt-3">
                       {bullets.map(b => <li key={b}>{b}</li>)}
                     </ul>
                   )}
@@ -201,23 +202,24 @@ export default function Sponsor() {
           <motion.div className="text-center mt-16"
             initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={fadeUp}>
             <a href="mailto:Info@sopbcenters.com"
-              className="inline-block bg-[#DDB764] text-[#3d4f6b] font-bold px-10 py-3 hover:bg-[#c9a455] transition-colors duration-300">
+              className="inline-block bg-[#D0B060] text-[#0F5050] font-medium px-10 py-3 hover:bg-[#B89A48] transition-colors duration-300">
               Get in Touch
             </a>
           </motion.div>
         </div>
       </section>
 
+      {/* WHAT YOU GET */}
       <section className="py-8 lg:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>
             <motion.div variants={fadeUp} className="flex items-center gap-3 mb-4">
-              <span className="w-8 h-[2px] bg-[#DDB764] inline-block" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#DDB764]">What You Get</span>
+              <span className="w-8 h-[2px] bg-[#D0B060] inline-block" />
+              <span className="text-xs font-medium uppercase tracking-widest text-[#D0B060]">What You Get</span>
             </motion.div>
-            <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#0E3E57] mb-12">
+            <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#0F5050] mb-12">
               NO BILLBOARD<br />
-              <span className="text-[#DDB764]">CAN DELIVER THIS.</span>
+              <span className="text-[#D0B060]">CAN DELIVER THIS.</span>
             </motion.h2>
           </motion.div>
 
@@ -235,8 +237,8 @@ export default function Sponsor() {
                   <img src={icon} alt="" className="w-full h-full object-contain p-2" />
                 </div>
                 <div>
-                  <p className="font-black text-[#0E3E57] text-base sm:text-lg leading-snug">{title}</p>
-                  {sub && <p className="text-zinc-500 text-sm mt-1">{sub}</p>}
+                  <p className="font-semibold text-[#0F5050] text-base sm:text-lg leading-snug">{title}</p>
+                  {sub && <p className="text-zinc-500 text-sm mt-1 font-normal">{sub}</p>}
                 </div>
               </motion.div>
             ))}
@@ -245,12 +247,12 @@ export default function Sponsor() {
           <motion.div className="text-center"
             initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}
             variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>
-            <motion.p variants={fadeUp} className="text-[#0E3E57] font-black text-lg sm:text-xl mb-6 leading-snug">
+            <motion.p variants={fadeUp} className="text-[#0F5050] font-semibold text-lg sm:text-xl mb-6 leading-snug">
               Companies like Michelob Ultra, Selkirk, JOOLA, Franklin, Deloitte,<br />
               UBS, and local hospitals/real estate firms{' '}
-              <span className="text-[#DDB764]">are already investing<br />heavily in pickleball for a reason.</span>
+              <span className="text-[#D0B060]">are already investing<br />heavily in pickleball for a reason.</span>
             </motion.p>
-            <motion.p variants={fadeUp} className="text-zinc-600 text-sm">
+            <motion.p variants={fadeUp} className="text-zinc-500 text-sm font-normal">
               PICKLETEO is the top venue in the region — don't miss the chance to lead the pack. Let's get your brand on the hottest courts in town
             </motion.p>
           </motion.div>
@@ -258,7 +260,7 @@ export default function Sponsor() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 lg:py-24 bg-[#0E3E57]">
+      <section className="py-16 lg:py-24 bg-[#0F5050]">
         <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col lg:flex-row gap-12 items-center">
           <motion.div className="w-full lg:w-[60%]"
             initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={fadeLeft}>
@@ -270,11 +272,11 @@ export default function Sponsor() {
             <motion.h2 variants={fadeUp} className="text-xl sm:text-2xl font-black text-white mb-3 leading-snug">
               Contact us today for a private tour and custom sponsorship deck.
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-zinc-300 text-xs sm:text-sm mb-6 leading-relaxed">
+            <motion.p variants={fadeUp} className="text-zinc-300 text-xs sm:text-sm mb-6 leading-relaxed font-normal">
               First partners in each category receive grandfathered pricing and priority placement. We're not just selling signage. We're selling the best advertising real estate in the fastest-growing sport in the country. See you on the courts!
             </motion.p>
             <motion.a variants={fadeUp} href="mailto:Info@sopbcenters.com"
-              className="inline-block bg-[#DDB764] text-[#1a1a1a] font-bold px-6 py-2 text-sm hover:bg-[#c9a455] transition-colors duration-300">
+              className="inline-block bg-[#D0B060] text-[#1a1a1a] font-medium px-6 py-2 text-sm hover:bg-[#B89A48] transition-colors duration-300">
               Get in Touch
             </motion.a>
           </motion.div>
