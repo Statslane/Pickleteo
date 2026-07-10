@@ -28,10 +28,10 @@ export default function Footer() {
           <ul className="space-y-2 text-[#0F5050] text-sm mb-4 font-normal">
             <li>2716 119th Street SW</li>
             <li>Everett, WA 98204</li>
-            <li className="pt-1 font-medium">Open Daily</li>
-            <li>5:00 AM – 11:00 PM</li>
             <li className="pt-1"><a href="tel:4255138946" className="hover:text-black">(425) 513-8946</a></li>
             <li><a href="mailto:Info@pickleteo.com" className="hover:text-black">Info@pickleteo.com</a></li>
+            <li className="pt-1 font-medium">Open Daily</li>
+            <li>5:00 AM – 11:00 PM</li>
           </ul>
           <div className="flex gap-3 mt-4">
             <a href="https://www.facebook.com/people/Side-Out-Pickleball-Centers/61559033286696/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#0F5050] rounded-full flex items-center justify-center hover:bg-[#1877F2] transition-colors duration-200">
