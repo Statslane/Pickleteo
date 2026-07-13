@@ -42,10 +42,10 @@ export default function AboutUs() {
                   <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 uppercase leading-tight">Frank Espinoza</h2>
                   <p className="text-[#0F5050] text-xs font-medium tracking-widest uppercase mt-1">Founder</p>
                 </div>
-                <img src="/frank.jpg" alt="Frank Espinoza" className="w-40 h-40 rounded-full object-cover" />
+                <img src="/frank.jpg" alt="Frank Espinoza" className="w-40 h-40 rounded-full object-cover" style={{ objectPosition: 'center 15%' }} />
               </div>
               <p className="text-zinc-600 text-sm leading-relaxed mb-4 font-normal">
-                Frank is a founding partner of PICKLETEO, heading day to day operations. He's an acclaimed senior executive with a national reputation for success.
+                Frank is a founding partner of PICKLETEO, overseeing day to day operations.
               </p>
               <p className="text-zinc-600 text-sm leading-relaxed mb-4 font-normal">
                 Frank is the owner of two successful restaurants in the Seattle Metro area, and the founder of Climaco Consulting LLC, where his clients have included Brightstar, Sam's Club, Target, Smart Circle, Sprint, Encore Repair and Costco. He previously served as Head of Stores for Wireless Advocates - the 3rd party wireless retailer in Costco stores nationally. Prior to that he led central operations at Radio Shack.
@@ -57,15 +57,12 @@ export default function AboutUs() {
               <div className="flex items-center gap-4 mb-4">
                 <div>
                   <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 uppercase leading-tight">Colby Espinoza</h2>
-                  <p className="text-[#0F5050] text-xs font-medium tracking-widest uppercase mt-1">Founder</p>
+                  <p className="text-[#0F5050] text-xs font-medium tracking-widest uppercase mt-1">General Manager</p>
                 </div>
                 <img src="/colby.jpg" alt="Colby Espinoza" className="w-40 h-40 rounded-full object-cover" />
               </div>
               <p className="text-zinc-600 text-sm leading-relaxed mb-4 font-normal">
-                Colby serves as General Manager and eagerly wears all hats leading the day to day operations of PICKLETEO Pickleball Center's first location (of many to come.)
-              </p>
-              <p className="text-zinc-600 text-sm leading-relaxed mb-4 font-normal">
-                Colby is known for his exceptional customer service and business acumen honed in IT and other industries including his family's restaurants over the past 15 years.
+                Colby serves as General Manager and eagerly wears all hats leading the day to day operations of PICKLETEO. Colby is known for his exceptional customer service and business acumen honed in IT and other industries including his family's restaurants over the past 15 years.
               </p>
               <p className="text-zinc-600 text-sm leading-relaxed mb-4 font-normal">
                 He is passionate about creating an unparalleled experience for players of all skill levels to play, create community and have a great time in his devotion to making PICKLETEO THE place for pickleball in Western Washington. He looks forward to getting to know as many players as possible.
