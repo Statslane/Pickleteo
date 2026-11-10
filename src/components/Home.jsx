@@ -182,7 +182,7 @@ function Home() {
               variants={{ hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut', delay: 0.1 } } }}
               className="bg-white rounded-2xl border border-[#D0B060] p-6 sm:p-8 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_4px_rgba(208,176,96,0.3)]">
               <div className="text-xs font-medium uppercase tracking-widest text-[#D0B060] mb-2">Open Play Plus</div>
-              <div className="mb-1"><span className="text-5xl font-black text-[#0F5050]">$80</span><span className="text-[#0F5050] font-normal">/mo</span></div>
+              <div className="mb-1"><span className="text-5xl font-black text-[#0F5050]">$95</span><span className="text-[#0F5050] font-normal">/mo</span></div>
               <div className="text-sm text-zinc-500 mb-1">One-time $100 Initiation</div>
               <p className="text-xs text-zinc-400 mb-6">For players who enjoy weekly open play</p>
               <div className="space-y-4 flex-1">
