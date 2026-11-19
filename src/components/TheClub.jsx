@@ -1,88 +1,46 @@
-import React, { useState, useEffect } from 'react';
+
 import { motion } from 'framer-motion';
 import Header from './Header';
 import Footer from './Footer';
+import PageHero from './PageHero';
 
 const fadeUp = { hidden: { opacity: 0, y: 50 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } } };
 const fadeLeft = { hidden: { opacity: 0, x: -60 }, show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } } };
 const fadeRight = { hidden: { opacity: 0, x: 60 }, show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } } };
 
-function useWindowSize() {
-  const [size, setSize] = useState({ w: window.innerWidth, h: window.innerHeight });
-  useEffect(() => {
-    const handler = () => setSize({ w: window.innerWidth, h: window.innerHeight });
-    window.addEventListener('resize', handler);
-    return () => window.removeEventListener('resize', handler);
-  }, []);
-  return size;
-}
-
 export default function TheClub() {
-  const { w, h } = useWindowSize();
-
-  const headingSize = w < 480 ? '2rem' : w < 768 ? '3rem' : w < 1024 ? '4rem' : `${w * 0.055}px`;
-  const subSize = w < 480 ? '0.875rem' : w < 768 ? '1rem' : '1.125rem';
-  const sectionHeight = Math.max(h * 1.0, 320);
-  const pt = w < 768 ? '6rem' : '9rem';
-  const px = w < 480 ? '1.5rem' : w < 1024 ? '2.5rem' : '4rem';
-
   return (
-    <main className="min-h-screen flex flex-col font-sans bg-white text-zinc-900 w-full">
+    <main className="interior-page min-h-screen flex flex-col font-sans bg-white text-zinc-900 w-full overflow-x-clip">
       <Header />
 
-      <section
-        className="relative w-full flex items-center"
-        style={{
-          height: sectionHeight,
-          backgroundImage: 'url(/court.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-black/55" />
-        <div className="relative w-full max-w-7xl mx-auto" style={{ paddingTop: pt, paddingBottom: '2.5rem', paddingLeft: px, paddingRight: px }}>
-          <motion.div initial="hidden" animate="show" variants={{ hidden: {}, show: { transition: { staggerChildren: 0.15 } } }}>
-            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-3">
-              <span className="w-8 h-[2px] bg-[#D0B060] inline-block" />
-              <span className="text-xs font-medium uppercase tracking-widest text-[#D0B060]">The Club</span>
-            </motion.div>
-            <motion.h1 variants={fadeUp} className="font-black tracking-tight leading-tight text-white mb-4" style={{ fontSize: headingSize }}>
-              BUILT FOR THE GAME.<br />
-              DESIGNED FOR <span className="text-[#D0B060]">YOU.</span>
-            </motion.h1>
-            <motion.p variants={fadeUp} className="text-white max-w-md font-normal leading-relaxed" style={{ fontSize: subSize }}>
-              Everything about PickleTeo Paddle Club is purpose-built for pickleball — the courts, the hours, the community, and the culture.
-            </motion.p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero eyebrow="The club · Mukilteo and Everett area" title="A place to play. A community to belong." description="Learn something new, enjoy your next game, and build connections that bring you back. Pickleteo brings welcoming play and dedicated indoor courts together for beginners, guests, and members." image="/optimized/pickleteo-club-086.webp" alt="Players on Pickleteo’s indoor courts, with games across the club" />
 
       {/* PROGRAMMING SECTION */}
-      <section className="py-16 lg:py-24 bg-[#F0F0E8]">
+      <section className="club-program-section py-16 lg:py-24 bg-[#F0F0E8]">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>
             <motion.div variants={fadeUp} className="flex items-center gap-3 mb-4">
               <span className="w-8 h-[2px] bg-[#D0B060] inline-block" />
-              <span className="text-xs font-medium uppercase tracking-widest text-[#D0B060]">Programming</span>
+              <span className="text-xs font-medium uppercase tracking-widest text-[#80651f]">Programming</span>
             </motion.div>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#0F5050] mb-12">
               SOMETHING FOR<br />
-              <span className="text-[#D0B060]">EVERY PLAYER.</span>
+              <span className="text-[#80651f]">EVERY PLAYER.</span>
             </motion.h2>
           </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border border-zinc-200 rounded-xl overflow-hidden">
+          <div className="club-program-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border border-zinc-200 rounded-xl overflow-hidden">
             {[
-              { tag: 'Open Play', title: 'SIGN UP ANYTIME', desc: 'Structured open play sessions organized by skill level. Show up, get matched, and play. Morning, afternoon, and evening blocks available daily.' },
-              { tag: 'Leagues', title: 'COMPETITIVE PLAY', desc: 'Seasonal leagues with standings, playoffs, and skill-based divisions. From recreational to competitive — find your bracket.' },
-              { tag: 'Clinics', title: 'LEVEL UP YOUR GAME', desc: 'Group clinics for beginners, intermediate, and advanced players. Focus on strategy, shot selection, and court positioning.' },
-              { tag: 'Private Lessons', title: 'ONE-ON-ONE COACHING', desc: 'Book private or semi-private lessons with certified instructors. Tailored to your game, your goals, your pace.' },
-              { tag: 'Tournaments', title: 'GAME DAY ENERGY', desc: 'In-house round robins and tournaments throughout the year. Compete against other club members in a fun, organized setting.' },
+              { tag: 'Open Play', title: 'FIND YOUR OPEN PLAY', desc: 'Explore general and DUPR grouped open play. Choose a session that fits your experience, then check its date, guest price, and availability in CourtReserve before registering.' },
+              { tag: 'Leagues', title: 'COMPETITIVE PLAY', desc: 'Build a regular playing routine with league sessions. Check CourtReserve for current formats, levels, dates, and registration.' },
+              { tag: 'Clinics', title: 'LEVEL UP YOUR GAME', desc: 'Explore current group learning sessions and check the level and focus before booking. Brand new? Start with the free Beginners Class.' },
+              { tag: 'Private Lessons', title: 'ONE-ON-ONE COACHING', desc: 'Ask about coaching options that fit your goals and experience. Confirm instructor availability, lesson format, and pricing before booking.' },
+              { tag: 'Tournaments', title: 'GAME DAY ENERGY', desc: 'Explore scheduled round robins and tournaments. Review the event format and any rating requirements to find your next challenge.' },
               { tag: 'Court Rentals', title: 'BOOK YOUR COURT', desc: 'Reserve a court online for private play with friends. Easy booking through our app — see availability in real time.' },
             ].map(({ tag, title, desc }, i) => (
               <motion.div key={title} className="card-line relative p-6 sm:p-8 border-b sm:border-r border-zinc-200 last:border-b-0 bg-white"
                 initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}
                 variants={{ hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut', delay: i * 0.08 } } }}>
-                <div className="text-xs font-medium uppercase tracking-widest text-[#D0B060] mb-3">{tag}</div>
+                <div className="text-xs font-medium uppercase tracking-widest text-[#80651f] mb-3">{tag}</div>
                 <div className="text-base font-semibold text-[#0F5050] mb-3">{title}</div>
                 <p className="text-zinc-500 text-sm leading-relaxed font-normal">{desc}</p>
               </motion.div>
@@ -97,30 +55,31 @@ export default function TheClub() {
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={fadeLeft}>
             <div className="flex items-center gap-3 mb-4">
               <span className="w-8 h-[2px] bg-[#D0B060] inline-block" />
-              <span className="text-xs font-medium uppercase tracking-widest text-[#D0B060]">Booking</span>
+              <span className="text-xs font-medium uppercase tracking-widest text-[#80651f]">Booking</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-6 text-[#0F5050]">
-              BOOK IN SECONDS.<br />
-              <span className="text-[#D0B060]">PLAY IN MINUTES.</span>
+              YOUR NEXT GAME.<br />
+              <span className="text-[#80651f]">A FEW CLEAR STEPS.</span>
             </h2>
             <p className="text-zinc-600 text-sm sm:text-base mb-6 max-w-md font-normal leading-relaxed">
-              All court reservations, open play sign-ups, and program registrations are handled through our club app. See real-time availability, book your spot, and check in — all from your phone.
+              Start in your browser or use CourtReserve on your phone. First choose the activity that fits you, then review its level, date, price, and availability before registering.
             </p>
             <ul className="space-y-3">
-              {['Real-time court availability', 'Mobile app for iOS and Android', 'Open play sign-ups by skill level', 'Lesson and clinic registration'].map(item => (
+              {['New to the sport? Start with the free Beginners Class.', 'Choose a session and read its level and format.', 'Follow the registration steps and check your confirmation.', 'Not sure which session fits? Ask our team before booking.'].map(item => (
                 <li key={item} className="flex items-center gap-3 text-sm text-zinc-600 font-normal">
-                  <span className="w-5 h-5 rounded-full bg-[#D0B060] flex items-center justify-center text-white text-xs flex-shrink-0">✓</span>
+                  <span className="w-5 h-5 rounded-full bg-[#D0B060] flex items-center justify-center text-[#123f3f] text-xs flex-shrink-0">✓</span>
                   {item}
                 </li>
               ))}
             </ul>
           </motion.div>
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={fadeRight} className="bg-[#F0F0E8] rounded-2xl p-8 sm:p-12 flex flex-col items-center text-center">
-            <h3 className="text-2xl sm:text-3xl font-black text-[#0F5050] mb-2">Smart Booking</h3>
-            <p className="text-zinc-400 text-sm mb-4 font-normal">Our club management platform</p>
+            <h3 className="text-2xl sm:text-3xl font-black text-[#0F5050] mb-2">Book your way</h3>
+            <p className="text-zinc-600 text-sm mb-4 font-normal">CourtReserve · browser or mobile app</p>
             <p className="text-zinc-600 text-sm leading-relaxed max-w-sm font-normal">
-              Court bookings, membership management, open play, leagues, keyless door access, and payments — all in one app. Available on iOS and Android.
+              For your first class, start with guest booking in your browser. For regular visits, download CourtReserve, sign in or create your account, and connect to Pickleteo Paddle Club.
             </p>
+            <div className="flex flex-wrap justify-center gap-3 mt-6"><a className="action-primary" href="https://player.courtreserve.com/players/events/e-2275478">Book the free class</a><a className="action-outline" href="https://apps.apple.com/us/app/courtreserve/id1392556575">iPhone app</a><a className="action-outline" href="https://play.google.com/store/apps/details?id=com.courtreserve">Android app</a></div>
           </motion.div>
         </div>
       </section>
@@ -135,13 +94,13 @@ export default function TheClub() {
             READY TO <span className="text-[#D0B060]">PLAY?</span>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-zinc-300 text-sm sm:text-base mb-8 font-normal leading-relaxed">
-            Membership is limited. Join the waitlist for early access, insider updates, and priority when we open.
+            Your next game starts at Pickleteo. Explore memberships or book a court without a paid membership.
           </motion.p>
-          <motion.a variants={fadeUp} href="https://app.courtreserve.com/Online/Memberships/Public/17390" target="_blank" rel="noopener noreferrer"
-            className="inline-block border border-[#D0B060] text-white text-xs font-medium uppercase tracking-widest px-10 py-4 hover:bg-[#D0B060] hover:text-[#0F5050] transition-colors duration-300">
-            Get On The List
+          <motion.a variants={fadeUp} href="/membership"
+            className="action-primary">
+            Explore Memberships
           </motion.a>
-          <motion.p variants={fadeUp} className="text-white/60 text-xs mt-4 font-normal">No credit card. No commitment. We'll be in touch.</motion.p>
+          <motion.p variants={fadeUp} className="text-white/90 text-base mt-6 font-normal leading-relaxed">Never held a paddle? That’s a perfectly good place to start. Try our free Beginners Class, learn the basics, and take it one step at a time. <a href="/#start-here" className="underline text-[#DDB764] font-semibold">Let’s find your first game.</a></motion.p>
         </motion.div>
       </section>
 
