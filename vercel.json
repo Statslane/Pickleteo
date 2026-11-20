@@ -1,3 +1,36 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    {
+      "source": "/membership",
+      "destination": "/membership/index.html"
+    },
+    {
+      "source": "/learn-improve",
+      "destination": "/learn-improve/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/index.html"
+    },
+    {
+      "source": "/the-club",
+      "destination": "/the-club/index.html"
+    },
+    {
+      "source": "/open-play",
+      "destination": "/open-play/index.html"
+    },
+    {
+      "source": "/sponsor",
+      "destination": "/sponsor/index.html"
+    },
+    {
+      "source": "/policies",
+      "destination": "/policies/index.html"
+    }
+  ]
 }

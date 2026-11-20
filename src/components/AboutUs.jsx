@@ -1,34 +1,18 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import Header from './Header';
 import Footer from './Footer';
+import PageHero from './PageHero';
 
 const fadeUp = { hidden: { opacity: 0, y: 50 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } } };
 
 export default function AboutUs() {
   return (
-    <main className="min-h-screen flex flex-col font-sans bg-white text-zinc-900 w-full">
+    <main className="interior-page min-h-screen flex flex-col font-sans bg-white text-zinc-900 w-full overflow-x-clip">
       <Header alwaysVisible />
 
       {/* HERO */}
-      <section className="w-full flex items-end px-6 sm:px-10 lg:px-16 pb-32" style={{ minHeight: '100vh', backgroundImage: 'url(/so8.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <motion.div
-          initial="hidden" animate="show"
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.15 } } }}
-        >
-          <motion.div variants={fadeUp} className="flex items-center gap-3 mb-3">
-            <span className="block h-[2px] w-8 bg-[#D0B060]" />
-            <span className="text-[#D0B060] text-xs font-medium tracking-[0.2em] uppercase">About</span>
-          </motion.div>
-          <motion.h1 variants={fadeUp} className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-4 uppercase">
-            Western Washington's premier<br />
-            pickleball Facility
-          </motion.h1>
-          <motion.p variants={fadeUp} className="text-white text-base sm:text-lg max-w-md leading-relaxed font-normal">
-            PICKLETEO isn't a franchise. It's a community project, built by a neighbor who wanted a better place to play.
-          </motion.p>
-        </motion.div>
-      </section>
+      <PageHero muted eyebrow="Our community" title="Belong. Improve. Keep coming back." description="A locally owned club bringing people together through welcoming play, memorable experiences, and meaningful connections." image="/optimized/so8.webp" alt="Players on court at Pickleteo" />
 
       {/* FOUNDERS SPLIT SECTION */}
       <section className="py-16 lg:py-24 bg-white">
@@ -42,7 +26,7 @@ export default function AboutUs() {
                   <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 uppercase leading-tight">Frank Espinoza</h2>
                   <p className="text-[#0F5050] text-xs font-medium tracking-widest uppercase mt-1">Founder</p>
                 </div>
-                <img src="/frank.jpg" alt="Frank Espinoza" className="w-40 h-40 rounded-full object-cover" style={{ objectPosition: 'center 15%' }} />
+                <img loading="lazy" decoding="async" src="/optimized/frank.webp" alt="Frank Espinoza" className="w-40 h-40 rounded-full object-cover" style={{ objectPosition: 'center 15%' }} />
               </div>
               <p className="text-zinc-600 text-sm leading-relaxed mb-4 font-normal">
                 Frank is a founding partner of PICKLETEO, overseeing day to day operations.
@@ -59,7 +43,7 @@ export default function AboutUs() {
                   <h2 className="text-2xl sm:text-3xl font-black text-zinc-900 uppercase leading-tight">Colby Espinoza</h2>
                   <p className="text-[#0F5050] text-xs font-medium tracking-widest uppercase mt-1">General Manager</p>
                 </div>
-                <img src="/colby.jpg" alt="Colby Espinoza" className="w-40 h-40 rounded-full object-cover" />
+                <img loading="lazy" decoding="async" src="/optimized/colby.webp" alt="Colby Espinoza" className="w-40 h-40 rounded-full object-cover" />
               </div>
               <p className="text-zinc-600 text-sm leading-relaxed mb-4 font-normal">
                 Colby serves as General Manager and eagerly wears all hats leading the day to day operations of PICKLETEO. Colby is known for his exceptional customer service and business acumen honed in IT and other industries including his family's restaurants over the past 15 years.
@@ -73,42 +57,17 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* OUR VALUES */}
-      <section className="py-16 lg:py-24 bg-[#FFFFFF]">
+      <section className="values-section otter-accent py-16 lg:py-24" aria-labelledby="values-heading">
         <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16">
-          <motion.div className="flex items-center justify-center gap-3 mb-3"
-            initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={fadeUp}>
-            <span className="block h-[2px] w-8 bg-[#0F5050]" />
-            <span className="text-[#0F5050] text-xs font-medium tracking-[0.2em] uppercase">Our Values</span>
-          </motion.div>
-          <motion.h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-zinc-900 uppercase text-center mb-12"
-            initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={fadeUp}>
-            What We <span className="text-[#D0B060]">Stand For.</span>
-          </motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="values-intro"><p className="text-xs font-bold uppercase tracking-widest text-[#0F5050] mb-4">What we stand for</p><h2 id="values-heading">Good games.<br />Meaningful connections.</h2><p className="values-lead">The courts bring us together. The way we welcome, support, and learn from each other gives us a reason to return.</p></div>
+          <div className="values-grid">
             {[
-              {
-                title: 'Community First',
-                desc: "This club exists because of its members. Your feedback shapes what we build — from hours to programming to pricing. We're listening."
-              },
-              {
-                title: 'Fair & Transparent',
-                desc: 'Simple membership, no games. Pricing and programming details are being finalized with our members in mind — waitlist members see everything first.'
-              },
-              {
-                title: 'All Levels Welcome',
-                desc: "Whether you've never held a paddle or you're grinding to compete, there's a place for you. Every program is designed to meet players where they are."
-              }
-            ].map(({ title, desc }) => (
-              <motion.div key={title} className="bg-white rounded-2xl p-8 border border-zinc-200 relative overflow-hidden group"
-                initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={fadeUp}>
-                <span className="absolute top-0 left-0 h-[3px] w-0 bg-[#D0B060] group-hover:w-full transition-all duration-500" />
-                <h3 className="text-sm font-semibold text-zinc-900 uppercase tracking-wide mb-3">{title}</h3>
-                <p className="text-zinc-500 text-sm leading-relaxed font-normal">{desc}</p>
-              </motion.div>
-            ))}
+              { title: 'Community first', promise: 'A place to feel part of something.', desc: 'A great club is built through the people in it. We want Pickleteo to be a place where you build connections and feel part of the community.' },
+              { title: 'Fair and transparent', promise: 'Clarity before you commit.', desc: 'You should be able to understand your options. Explore current benefits and program details, and ask us for help finding the way to play that fits you.' },
+              { title: 'All levels welcome', promise: 'Your starting point belongs here.', desc: 'Everyone has a first game. Whether you’re learning the basics or looking for your next challenge, take the next step at a level that feels right for you.' }
+            ].map(({title,promise,desc})=><article key={title} className="value-card"><span className="value-accent" aria-hidden="true" /><p className="value-label">{title}</p><h3>{promise}</h3><p className="value-description">{desc}</p></article>)}
           </div>
+          <div className="values-invitation"><p>Not sure where to begin? You don’t need to have it figured out.</p><a href="/#start-here">Find your first step →</a></div>
         </div>
       </section>
 
